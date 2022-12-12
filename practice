@@ -1,0 +1,37 @@
+const resolvePromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        console.log('First');
+        resolve('Resolve!'); // resolve를 실행할 때, 안에 데이터를 넣어줄 수 있습니다.
+    }, 1000);
+});
+
+resolvePromise.then((data) => {
+    console.log('Middle');
+    console.log('Last');
+    console.log(data);
+})
+
+// Print: First -> 1초 뒤에 출력됩니다.
+// Middle
+// Last
+// Resolve!
+
+// resolve = promise를 furfilled 상태로 만들어줌
+
+// const timerPromise = new Promise((resolve, reject) => { // 이곳에 정의된 함수가 executor
+//     setTimeout(() => {
+//             console.log('First');
+//                   resolve();
+//           }, 1000);
+//   });
+  
+//   // 이 시점에서 timerPromise는 Fulfilled Promise라고 부를 수 있다.
+  
+//   timerPromise.then(() => {
+//           console.log('Middle');
+//           console.log('Last');
+//   });
+  
+//   // Print: First
+//   // Middle
+//   // Last
