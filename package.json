@@ -1,0 +1,19 @@
+{
+  "name": "node_sparta_board",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "auth-middleware": "^1.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose-auto-increment": "^5.0.1"
+  },
+  "type": "commonjs"
+}
