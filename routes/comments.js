@@ -18,12 +18,15 @@ router.post("/:postsId", async (req, res) => {
   const date = new Date()
   const commentid = date.valueOf();
   console.log(post)
-  res.json(post)
   try {
-        post.comments.create({
-        nickname, content, commentid
+        post.comments.push({
+        nickname, 
+        content, 
+        commentid,
+        createdAt: null
     });
-      await post.save();
+      const result = await post.save();
+      console.log(result)
       return res.status(200).send({message: "댓글 작성 성공!"});
     } catch (err){
       console.log(err) 

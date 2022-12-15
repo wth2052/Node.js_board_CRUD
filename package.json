@@ -13,6 +13,7 @@
     "auth-middleware": "^1.0.0",
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "mongoose": "^6.8.0",
     "mongoose-auto-increment": "^5.0.1"
   },
   "type": "commonjs"
