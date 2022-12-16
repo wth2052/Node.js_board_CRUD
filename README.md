@@ -1,6 +1,6 @@
 # Node.js_board_CRUD
 # api 호출 경로
-zardfanpage.shop/api/posts
+zardfanpage.shop/api/posts //
 zardfanpage.shop/api/comments
 
 
