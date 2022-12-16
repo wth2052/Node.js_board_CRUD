@@ -5,8 +5,6 @@ const Posts = require("../schemas/posts.js")
 // 게시물 작성 POST
     router.post("/", async (req, res) => {
     const {user, password, title, content} = req.body
-    // const date = new Date();
-    // let postsId = date.valueOf();
     //빈칸에 대한 if 요청, try catch 사용
       try {
           await Posts.create({user, password, title, content})

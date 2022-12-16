@@ -38,36 +38,36 @@ router.post("/:postsId", async (req, res) => {
 
 
 // Comment 수정
-router.patch("/:postsId/:_id", async (req, res) => {
-  const {postsId,_id} = req.params;
-  console.log(postsId)
+router.patch("/:commentId", async (req, res) => {
+  const {commentId} = req.params;
+  console.log(Posts);
   const {content} = req.body    //코멘트 아이디
-  try {
+      console.log(commentId);
       await Posts.updateOne(
-      { postsId : postsId, "comments._id": _id},
-      { $set: {"comments.$.content": content} });
-      return res.status(200).send({message: "수정에 성공했습니다."});
-  } catch (error) {
-      return res.status(400).send({message: "수정에 실패했습니다."});
-  }
+      { _id : commentId},
+      { $set: {"comments.content": content} });
+      return res.status(200).send({});
+  
+      // return res.status(400).send({});
+
 });
 
+
 // Comment 삭제
-router.delete("/:postsId/:_id", async (req, res) => {
-  const {postsId,_id} = req.params;
-  console.log(_id) 
-  const find = await Posts.find ({postsId: postsId})
-  console.log(find)
-  try {
-    
-  await Posts.updateOne(
-    { postsId: postsId},
-        {$pull: {comments: {_id: _id}}},
-      res.status(200).send({message:"삭제됐음"}))
-    } catch (error) {
-      return res.status(400).send({});
-  }
+router.delete("/:postsId/:commentId", async (req, res) => {
+  const {postsId,commentId} = req.params;
+  const {content} = req.body    //코멘트 아이디
+
+  Posts.findOneAndUpdate(
+      { postsId : Number(postsId)},
+      {   $pull: {comments: {commentid: commentId}}},
+      { new: true},
+      function(err) {
+          if(err) {console.log(err)}
+      }
+  )
 });
+
 
 
 module.exports = router;

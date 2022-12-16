@@ -51,6 +51,7 @@ const postsSchema = new mongoose.Schema({
     startAt: 1, //시작
     increment: 1 // 증가
 });
+
 // 몽고디비 컬렉션과 스키마 연결하는 모델 생성
 module.exports = mongoose.model("Comment", commentSchema);
 module.exports = mongoose.model("Posts", postsSchema);
