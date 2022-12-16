@@ -4,7 +4,7 @@ zardfanpage.shop/api/posts
 zardfanpage.shop/api/comments
 
 
-zardfanpage.shop/api/comments/postsId
+zardfanpage.shop/api/comments/postsId  
 zardfanpage.shop/api/comments/postsId/commentsId
 
 
