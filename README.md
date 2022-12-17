@@ -28,7 +28,7 @@ commentsId = 639b4faefd552ab36b4511b7 ...
  __v  
  　　　comments {  
  　　　nickname  
-   　　content  
+   　　　content  
 　　　password  
 　　　commentId  
 　　　createdAt  
