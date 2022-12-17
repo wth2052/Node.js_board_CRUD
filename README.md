@@ -26,12 +26,12 @@ commentsId = 639b4faefd552ab36b4511b7 ...
  updatedAt  
  postsId  
  __v  
- 　　comments {  
- 　　nickname  
-   　content  
+ 　　　comments {  
+ 　　　nickname  
+   　　content  
 　　　password  
 　　　commentId  
-　　createdAt  
+　　　createdAt  
 　　　_id  
   　　}  
  }  
