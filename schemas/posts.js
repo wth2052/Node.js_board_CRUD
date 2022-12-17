@@ -6,6 +6,7 @@ autoIncrement.initialize(mongoose.connection);
 const commentSchema = new mongoose.Schema({
   nickname : String,
   content : String,
+  password : String,
   commentid : Number,
   createdAt : Date
 },

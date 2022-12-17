@@ -11,29 +11,27 @@ router.get("/:postsId", async (req, res) => {
 
 //POST 댓글 작성 완성
 router.post("/:postsId", async (req, res) => {
-  
   const { postsId } = req.params;
-  const {nickname, content} = req.body
+  const {nickname, password,content} = req.body
   const post = await Posts.findById (postsId)
   const date = new Date()
   const commentid = date.valueOf();
-  console.log(post)
-  try {
+    if(nickname, content, password){
         post.comments.push({
         nickname, 
         content, 
+        password,
         commentid,
         createdAt: new Date()
     });
       const result = await post.save();
       console.log(result)
       return res.status(200).send({message: "댓글 작성 성공!"});
-    } catch (err){
-      console.log(err) 
-      if(!content || !nickname){
+    }
+    if(!content || !nickname || !password){
         return res.status(400).json({success: false, errorMessage:"내용이나 작성자가 입력되지 않았습니다. 다시한번 확인해주세요."});
       }
-    }
+  
 });
 
 
@@ -41,7 +39,12 @@ router.post("/:postsId", async (req, res) => {
 router.patch("/:postsId/:_id", async (req, res) => {
   const {postsId,_id} = req.params;
   console.log(postsId)
-  const {content} = req.body    //코멘트 아이디
+  const {password, content} = req.body    //코멘트 아이디
+  const posts = await Posts.find({ postsId : postsId, "comments._id": _id});
+  // //하나는 postsId를 하나는 password를 쭉 돌아 나온 결과를 새로운 배열로써 반환해줌.
+  // const commentIds = posts.map((post) => post.commentId); 
+  // // [1, 2, 3, 4, 5, 6, 7]
+  // const commentsPws = posts.map((post) => post.password);
   try {
       await Posts.updateOne(
       { postsId : postsId, "comments._id": _id},
