@@ -29,9 +29,9 @@ commentsId = 639b4faefd552ab36b4511b7 ...
  　　comments {  
  　　nickname  
    　content  
-    password  
-　　commentId  
+　　　password  
+　　　commentId  
 　　createdAt  
-　　_id  
+　　　_id  
   　　}  
  }  
