@@ -14,7 +14,7 @@ commentsId = 639b4faefd552ab36b4511b7 ...
  
  
  
- 스키마 구조
+ 스키마 구조  
  게시글  
  {  
  _id  
